@@ -1,1 +1,7 @@
-<paste log output from Kubernetes-mediated prediction, here>
+NAME                    READY   STATUS             RESTARTS   AGE
+ml-api-20231001022317   0/1     ImagePullBackOff   0          3m26s
+ml-api-20231001022621   1/1     Running            0          22s
+root@DESKTOP-FJ4DGAG:~/learning/DevOps_Microservices/project-ml-microservice-kubernetes# kubectl port-forward ml-api-20231001022621 8000:80
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
