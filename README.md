@@ -49,25 +49,35 @@ source .devops/bin/activate
 * Create Flask app in Container
 * Run via kubectl
 
-## Run applicaion with docker.
-* Run `sh run_docker.sh`
-> :warning: **Please don't forget to change ```DOCKER_PATH``` in `run_docker.sh`**
+## Run the following command to start the application with Docker:
+    ```
+    sh run_docker.sh
+    ```
+   Note: Don't forget to set the correct `DOCKER_PATH` in `run_docker.sh`.
 
 ## Upload docker image
-1. Export DOCKER_USERNAME and DOCKER_PASSWORD
-ex: `export DOCKER_USERNAME=username`
-    `export DOCKER_PASSWORD=password`
-
-> :warning: **Please don't forget to change ```DOCKER_PATH``` in `upload_docker.sh`**
-2. Run `sh upload_docker.sh`
+1. Export your Docker Hub credentials:
+    ```
+    export DOCKER_USERNAME=username
+    export DOCKER_PASSWORD=password
+    ```
+2. Run the upload script:
+    ```
+    sh upload_docker.sh
+    ```
+Note: Don't forget to set the correct `DOCKER_PATH` in `upload_docker.sh`.
 
 ## Configure Kubernetes to Run locally
-* Run: `sh run_kubernetes.sh`
-> :warning: **Please don't forget to change ```DOCKER_PATH``` in `upload_docker.sh`**
-The script will automatically forward after deployment to port 8000
+    ```
+    sh run_kubernetes.sh
+    ```
+Note: Don't forget to set the correct `DOCKER_PATH` in `run_kubernetes.sh`.
+The script will automatically forward to port 8000 after deployment.
 
 ## To test application via Docker or Kubernetes
-* Run `sh make_prediction.sh`
+    ```
+    sh make_prediction.sh
+    ```
 
 ## Files
 
