@@ -48,3 +48,34 @@ source .devops/bin/activate
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+
+## Run applicaion with docker.
+* Run `sh run_docker.sh`
+> :warning: **Please don't forget to change ```DOCKER_PATH``` in `run_docker.sh`**
+
+## Upload docker image
+1. Export DOCKER_USERNAME and DOCKER_PASSWORD
+ex: `export DOCKER_USERNAME=username`
+    `export DOCKER_PASSWORD=password`
+
+> :warning: **Please don't forget to change ```DOCKER_PATH``` in `upload_docker.sh`**
+2. Run `sh upload_docker.sh`
+
+## Configure Kubernetes to Run locally
+* Run: `sh run_kubernetes.sh`
+> :warning: **Please don't forget to change ```DOCKER_PATH``` in `upload_docker.sh`**
+The script will automatically forward after deployment to port 8000
+
+## To test application via Docker or Kubernetes
+* Run `sh make_prediction.sh`
+
+## Files
+
+- config.yml: CircleCI configuration file.
+- Makefile: includes instructions for setup, install, test and lint.
+- app.py: Python application file.
+- Dockerfile: Dockerfile for build and expose.
+- run_docker.sh: Shell file to run Docker, locally.
+- upload_docker.sh: Shell file to upload Docker image.
+- run_kubernetes.sh: Shell file to run the app with kubernetes.
+- make_prediction.sh: Shell file to test flask app locally.
